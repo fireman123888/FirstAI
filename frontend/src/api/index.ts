@@ -3,8 +3,8 @@ import type { Node, Edge } from '@xyflow/react';
 import type { LayerNodeData, TrainingConfig } from '../types';
 
 // 支持环境变量配置，默认使用本地地址
-export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
-export const WS_BASE = import.meta.env.VITE_WS_URL || 'ws://localhost:8000/api';
+export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8002/api';
+export const WS_BASE = import.meta.env.VITE_WS_URL || 'ws://localhost:8002/api';
 
 const api = axios.create({
   baseURL: API_BASE,

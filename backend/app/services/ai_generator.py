@@ -1,5 +1,5 @@
 import os
-import anthropic
+# import anthropic  # 暂时禁用，有包版本兼容性问题
 from typing import List, Dict, Any
 from ..models.schemas import NodeInfo, EdgeInfo
 
@@ -66,66 +66,32 @@ def get_anthropic_client():
     if not api_key:
         return None
 
-    # 支持自定义 base_url（用于代理或私有部署）
-    base_url = os.getenv("ANTHROPIC_BASE_URL")
+    try:
+        # 支持自定义 base_url（用于代理或私有部署）
+        base_url = os.getenv("ANTHROPIC_BASE_URL")
 
-    if base_url:
-        return anthropic.Anthropic(api_key=api_key, base_url=base_url)
-    else:
-        return anthropic.Anthropic(api_key=api_key)
+        if base_url:
+            return anthropic.Anthropic(api_key=api_key, base_url=base_url)
+        else:
+            return anthropic.Anthropic(api_key=api_key)
+    except Exception as e:
+        print(f"创建 Anthropic 客户端失败: {e}")
+        return None
 
 
 async def generate_pytorch_code(nodes: List[NodeInfo], edges: List[EdgeInfo]) -> str:
     """使用 Claude API 生成 PyTorch 代码"""
 
-    model_desc = build_model_description(nodes, edges)
+    # 暂时禁用 AI 生成，使用模板代码
+    # TODO: 修复 anthropic 包版本兼容性问题后启用
+    return generate_template_code(nodes, edges)
 
-    prompt = f"""请根据以下神经网络结构，生成完整的 PyTorch 代码。
-
-网络结构（按层顺序）：
-{model_desc}
-
-要求：
-1. 生成一个完整的 PyTorch 神经网络类（继承 nn.Module）
-2. 包含完整的 __init__ 和 forward 方法
-3. 添加训练函数和评估函数
-4. 使用 MNIST 数据集作为示例
-5. 代码要可以直接运行
-6. 包含适当的中文注释
-
-只输出 Python 代码，不要其他解释。代码要完整且可运行。"""
-
-    client = get_anthropic_client()
-
-    if not client:
-        # 如果没有配置 API，返回模板代码
-        return generate_template_code(nodes, edges)
-
-    try:
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=4096,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-
-        code = message.content[0].text
-
-        # 清理代码（移除 markdown 代码块标记）
-        if code.startswith("```python"):
-            code = code[9:]
-        elif code.startswith("```"):
-            code = code[3:]
-        if code.endswith("```"):
-            code = code[:-3]
-
-        return code.strip()
-
-    except Exception as e:
-        print(f"AI 生成失败: {e}")
-        # 出错时回退到模板代码
-        return generate_template_code(nodes, edges)
+    # 以下是原始 AI 生成代码（暂时禁用）
+    # model_desc = build_model_description(nodes, edges)
+    #
+    # prompt = f"""请根据以下神经网络结构，生成完整的 PyTorch 代码。
+    # ...
+    # """
 
 
 def generate_template_code(nodes: List[NodeInfo], edges: List[EdgeInfo]) -> str:
