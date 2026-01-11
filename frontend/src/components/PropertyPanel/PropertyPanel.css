@@ -1,0 +1,29 @@
+.property-panel {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.layer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.layer-type-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.layer-id {
+  font-size: 11px;
+  color: #999;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.no-params {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 0;
+}

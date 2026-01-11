@@ -1,0 +1,402 @@
+.code-preview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-preview .ant-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.code-container {
+  flex: 1;
+  overflow: auto;
+  background: #282c34;
+  border-radius: 6px;
+  min-height: 200px;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.code-block {
+  margin: 0;
+  padding: 16px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #abb2bf;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.empty-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+}
+
+.empty-code p {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.training-config {
+  padding: 8px 0;
+}
+
+.training-status {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.training-status p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
+.training-chart {
+  padding: 8px 0;
+}
+
+.training-progress {
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.metric-item {
+  flex: 1;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.metric-label {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.empty-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.empty-chart p {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+/* 训练结果页样式 */
+.training-result {
+  padding: 8px 0;
+}
+
+.result-content {
+  text-align: center;
+}
+
+.rating-section {
+  margin-bottom: 16px;
+}
+
+.rating-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.rating-level {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.rating-text {
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.accuracy-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  color: white;
+}
+
+.accuracy-number {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.accuracy-percent {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.accuracy-label {
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.explanation-section {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.explanation-text {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stats-section {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.stats-section .stat-item {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.stats-section .stat-label {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.stats-section .stat-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tips-section {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  text-align: left;
+}
+
+.tips-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.tips-list li {
+  margin: 4px 0;
+}
+
+.empty-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.empty-result p {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.empty-result.error {
+  background: #fff2f0;
+  color: #ff4d4f;
+}
+
+/* 预测示例展示样式 */
+.predictions-section {
+  background: #f0f5ff;
+  border: 1px solid #adc6ff;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.predictions-section .section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.prediction-card {
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.prediction-card.correct {
+  border-color: #b7eb8f;
+  background: #f6ffed;
+}
+
+.prediction-card.wrong {
+  border-color: #ffa39e;
+  background: #fff2f0;
+}
+
+.prediction-image {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.prediction-info {
+  margin-top: 6px;
+  text-align: center;
+  width: 100%;
+}
+
+.prediction-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  gap: 4px;
+}
+
+.prediction-row .info-label {
+  color: #999;
+}
+
+.prediction-row .info-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 13px;
+}
+
+.prediction-confidence {
+  font-size: 10px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.predictions-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.predictions-empty {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-size: 12px;
+}

@@ -1,0 +1,104 @@
+.app-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1890ff 0%, #722ed1 100%);
+  padding: 0 24px;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.app-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.app-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+.header-right .ant-btn {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-right .ant-btn:hover {
+  color: white;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-body {
+  height: calc(100vh - 56px);
+}
+
+.left-sider {
+  background: white;
+  border-right: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.left-sider .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+}
+
+.main-content {
+  background: #f5f5f5;
+  padding: 0;
+  overflow: hidden;
+}
+
+.right-sider {
+  background: white;
+  border-left: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.right-sider .ant-layout-sider-children {
+  height: 100%;
+}
+
+.right-panels {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  gap: 12px;
+}
+
+.property-section {
+  flex: 0 0 auto;
+  max-height: 45%;
+  overflow: hidden;
+}
+
+.property-section .ant-card {
+  height: 100%;
+}
+
+.code-section {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.code-section .ant-card {
+  height: 100%;
+}
